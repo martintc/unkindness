@@ -1,0 +1,31 @@
+DEF[PORTVERSION]=	1.4.9
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		ratpoison
+VERSION=		${PORTVERSION}
+KEYWORDS=		x11_wm
+VARIANTS=		standard
+SDESC[standard]=	The anti-rodent window manager
+HOMEPAGE=		https://www.nongnu.org/ratpoison
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		http://download.savannah.nongnu.org/releases/ratpoison/
+DISTFILE[1]=		ratpoison-${PORTVERSION}.tar.gz:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		x11-wm/ratpoison
+
+LICENSE=		GPLv2+:single
+LICENSE_FILE=		GPLv2+:{{WRKSRC}}/COPYING
+LICENSE_TERMS=		single:{{WRKSRC}}/COPYING
+LICENSE_SCHEME=		solo
+
+USES=			gmake pkgconfig
+XORG_COMPONENTS=	x11 xext xft xpm xrandr xinerama xrender
+MUST_CONFIGURE=		yes
+CONFIGURE_ARGS=		--prefix={{PREFIX}}
