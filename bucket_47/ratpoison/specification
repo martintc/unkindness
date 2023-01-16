@@ -22,10 +22,14 @@ FPC_EQUIVALENT=		x11-wm/ratpoison
 
 LICENSE=		GPLv2+:single
 LICENSE_FILE=		GPLv2+:{{WRKSRC}}/COPYING
-LICENSE_TERMS=		single:{{WRKSRC}}/COPYING
+LICENSE_TERMS=		single:{{WRKDIR}}/TERMS
+LICENSE_SOURCE=		TERMS:{{WRKSRC}}/src/main.c
+LICENSE_AWK=		TERMS:"^$$"
 LICENSE_SCHEME=		solo
 
 USES=			gmake pkgconfig
 XORG_COMPONENTS=	x11 xext xft xpm xrandr xinerama xrender
 MUST_CONFIGURE=		yes
-CONFIGURE_ARGS=		--prefix={{PREFIX}}
+
+post-stage:
+	${RM} -r ${STAGE}${PREFIX}/share/doc/ratpoison/
