@@ -1,9 +1,9 @@
---- Makefile	2023-01-15 20:12:28.434299889 +0000
-+++ Makefile.new	2023-01-15 20:12:56.400085485 +0000
+--- Makefile	2014-08-11 19:13:42.000000000 +0000
++++ Makefile.new	2023-01-18 22:15:41.736419293 +0000
 @@ -1,5 +1,5 @@
 -BINDIR =	/usr/local/sbin
 -MANDIR =	/usr/local/man/man8
-+BINDIR =	__PREFIX__/sbin
++BINDIR =	__PREFIX__/bin
 +MANDIR =	__PREFIX__/man/man8
  CC =		cc
  CFLAGS =	-O -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
