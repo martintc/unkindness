@@ -6,7 +6,7 @@ VERSION=		${PORTVERSION}
 KEYWORDS=		www
 VARIANTS=		standard
 SDESC[standard]=	Small acme http server
-HOMEPAGE=		none
+HOMEPAGE=		https://acme.com/software/micro_httpd
 CONTACT=		Todd_Martin[warfox@sdf.org]
 
 DOWNLOAD_GROUPS=	main
@@ -19,6 +19,12 @@ OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
 FPC_EQUIVALENT=		www/microhttpd
+
+LICENSE=		BSD2CLAUSE:single
+LICENSE_FILE=		BSD2CLAUSE:{{WRKDIR}}/LICENSE
+LICENSE_SOURCE=		BSD2CLAUSE:{{WORKSRC}}/micro_httpd.c
+LICENSE_AWK=		BSD2CLAUSE:"^$$"
+LICENSE_SCHEME=		solo
 
 USES=			gmake
 
