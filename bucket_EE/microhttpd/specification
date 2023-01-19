@@ -1,7 +1,7 @@
 DEF[PORTVERSION]=	14Aug2014
 # ----------------------------------------------------------------------------
 
-NAMEBASE=		micro_httpd
+NAMEBASE=		microhttpd
 VERSION=		${PORTVERSION}
 KEYWORDS=		www
 VARIANTS=		standard
@@ -22,7 +22,7 @@ FPC_EQUIVALENT=		www/microhttpd
 
 LICENSE=		BSD2CLAUSE:single
 LICENSE_FILE=		BSD2CLAUSE:{{WRKDIR}}/LICENSE
-LICENSE_SOURCE=		BSD2CLAUSE:{{WORKSRC}}/micro_httpd.c
+LICENSE_SOURCE=		BSD2CLAUSE:{{WRKSRC}}/micro_httpd.c
 LICENSE_AWK=		BSD2CLAUSE:"^$$"
 LICENSE_SCHEME=		solo
 
