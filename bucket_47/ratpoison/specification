@@ -29,7 +29,7 @@ LICENSE_SCHEME=		solo
 
 USES=			gmake pkgconfig
 XORG_COMPONENTS=	x11 xext xft xpm xrandr xinerama xrender
-MUST_CONFIGURE=		yes
+MUST_CONFIGURE=		gnu
 
 post-stage:
-	${RM} -r ${STAGE}${PREFIX}/share/doc/ratpoison/
+	${RM} -r ${STAGE}${PREFIX}/share/doc/ratpoison
