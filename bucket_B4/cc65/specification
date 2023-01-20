@@ -18,8 +18,15 @@ SPKGS[standard]=	single
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
+LICENSE=		ZLIB:single
+LICENSE_FILE=		ZLIB:{{WRKSRC}}/LICENSE
+LICENSE_SCHEME=		solo
+
 FPC_EQUIVALENT=		devel/cc65
 
 USES=			gmake
 
-DISTNAME=		cc65-2.19
+DISTNAME=		cc65-${PORTVERSION}
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
