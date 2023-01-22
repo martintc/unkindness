@@ -1,0 +1,25 @@
+DEF[PORTVERSION]=	6.8p1
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		openntpd
+VERSION=		${PORTVERSION}
+KEYWORDS=		net
+VARIANTS=		standard
+SDESC[standard]=	Network Time Protocol (NTP) Daemon
+HOMEPAGE=		https://www.openntp.org
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		GITHUB/openntpd-portable:openntpd-portable:${PORTVERSION}
+DISTFILE[1]=		generated:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		net/openntp
+
+USES=			gmake
+
+MUST_CONFIGURE=		gnu
