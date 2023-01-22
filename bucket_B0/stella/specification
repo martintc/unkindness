@@ -13,14 +13,22 @@ DOWNLOAD_GROUPS=	main
 SITES[main]=		GITHUB/stella-emu:stella:${PORTVERSION}
 DISTFILE[1]=		generated:main
 
-SPKGS[standard]=	single
+SPKGS[standard]=	complete primary docs
 
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
 FPC_EQUIVALENT=		emulators/stella
 
+LICENSE=		GPLv2:primary
+LICENSE_FILE=		GPLv2:{{WRKSRC}}/License.txt
+LICENSE_TERMS=		primary:{{WRKSRC}}/Copyright.txt
+LICENSE_SCHEME=		solo
+
 USES=			gmake
 MUST_CONFIGURE=		gnu
 
-BUILD_DEPENDS=		sdl2:single:standard
+BUILDRUN_DEPENDS=	sdl2:single:standard
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/stella
