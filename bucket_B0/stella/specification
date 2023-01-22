@@ -25,10 +25,9 @@ LICENSE_FILE=		GPLv2:{{WRKSRC}}/License.txt
 LICENSE_TERMS=		primary:{{WRKSRC}}/Copyright.txt
 LICENSE_SCHEME=		solo
 
-USES=			gmake
+USES=			gmake c++:primary sqlite
+SDL_COMPONENTS=		sdl2
 MUST_CONFIGURE=		gnu
-
-BUILDRUN_DEPENDS=	sdl2:single:standard
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/stella
