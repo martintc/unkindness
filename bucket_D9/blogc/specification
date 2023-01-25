@@ -1,0 +1,26 @@
+DEF[PORTVERSION]=	0.20.1
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		blogc
+VERSION=		${PORTVERSION}
+KEYWORDS=		www
+VARIANTS=		standard
+SDESC[standard]=	Blogc is a blog compiler written in C
+HOMEPAGE=		https://blogc.rgm.io
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		GITHUB/blogc:blogc:v${PORTVERSION}
+DISTFILE[1]=		generated:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		www/blogc
+
+USES=			autoreconf gmake ruby
+MUST_CONFIGURE=		gnu
+
+BUILDRUN_DEPENDS=	ruby-ronn-ng:single:v32
