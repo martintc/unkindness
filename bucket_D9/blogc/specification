@@ -13,14 +13,21 @@ DOWNLOAD_GROUPS=	main
 SITES[main]=		GITHUB/blogc:blogc:v${PORTVERSION}
 DISTFILE[1]=		generated:main
 
-SPKGS[standard]=	single
+SPKGS[standard]=	complete primary docs
 
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
 FPC_EQUIVALENT=		www/blogc
 
-USES=			autoreconf gmake ruby
-MUST_CONFIGURE=		gnu
+LICENSE=		BSD3CLAUSE:primary
+LICENSE_FILE=		BSD3CLAUSE:{{WRKSRC}}/LICENSE
+LICENSE_SCHEME=		solo
 
-BUILDRUN_DEPENDS=	ruby-ronn-ng:single:v32
+USES=			autoreconf pkgconfig gmake cclibs:primary
+MUST_CONFIGURE=		yes
+CONFIGURE_ARGS=		--prefix={{PREFIX}}
+
+BUILD_DEPENDS=		ruby-ronn-ng:single:v32
+
+BUILD_TARGET=		all-am
