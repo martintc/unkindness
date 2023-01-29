@@ -13,11 +13,19 @@ DOWNLOAD_GROUPS=	main
 SITES[main]=		GITHUB/gbdev:rgbds:v${PORTVERSION}
 DISTFILE[1]=		generated:main
 
-SPKGS[standard]=	single
+SPKGS[standard]=	complete primary man
 
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
 FPC_EQUIVALENT=		devel/rgdbs
 
-USES=			bison c++:single cmake png
+USES=			bison c++:primary gmake png pkgconfig
+
+LICENSE=		MIT:primary
+LICENSE_FILE=		MIT:{{WRKSRC}}/LICENSE
+LICENSE_SCHEME=		solo
+
+post-patch:
+	${REINPLACE_CMD} 's!__PREFIX__!${PREFIX}!g' \
+			 ${WRKSRC}/Makefile
