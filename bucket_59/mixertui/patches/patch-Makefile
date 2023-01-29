@@ -1,0 +1,27 @@
+--- Makefile	2021-01-20 14:26:38.000000000 -0800
++++ Makefile.new	2023-01-29 01:44:24.535398000 -0800
+@@ -8,8 +8,8 @@
+ OBJECTS= ${SOURCES:.c=.o}
+ 
+ # BASE ncurses
+-CFLAGS= -Wall -I/usr/local/include
+-LDFLAGS= -L/usr/lib -lmenu -lncurses -ltinfo -L/usr/local/lib -lsysctlmibinfo2
++CFLAGS= -Wall -I__PREFIX__/include/ncurses
++LDFLAGS= -L__PREFIX__/lib -lmenu -lncurses -ltinfo -lsysctlmibinfo2
+ 
+ # PORT ncurses `make -DPORTNCURSES` or `make -D PORTNCURSES`
+ .if defined(PORTNCURSES)
+@@ -17,11 +17,11 @@
+ LDFLAGS = -L/usr/local/lib -lmenu -lncurses -ltinfo -lsysctlmibinfo2
+ .endif
+ 
+-BINDIR= /usr/local/sbin
++BINDIR= __PREFIX__/sbin
+ 
+ MAN= ${OUTPUT}.8
+ GZIP= gzip -cn
+-MANDIR= /usr/local/share/man/man8
++MANDIR= __PREFIX__/share/man/man8
+ 
+ INSTALL= install
+ RM= rm -f

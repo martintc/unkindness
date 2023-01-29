@@ -18,10 +18,12 @@ SPKGS[standard]=	single
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
-FPC_EQUIVALENT=		audio/mixertui
-
 USES=			ncurses
+
+FPC_EQUIVALENT=		audio/mixertui
 
 ONLY_FOR_OPSYS=		freebsd
 
-MAKE_ARGS=		-DPORTNCURSES
+post-patch:
+	${REINPLACE_CMD} 's!__PREFIX__!${PREFIX}!g' \
+			${WRKSRC}/Makefile
