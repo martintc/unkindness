@@ -1,21 +1,24 @@
-# DEF[PORTVERSION]=	1.00
+DEF[PORTVERSION]=	3_4_1
 # ----------------------------------------------------------------------------
 
-NAMEBASE=		...
+NAMEBASE=		spectrwm
 VERSION=		${PORTVERSION}
-KEYWORDS=		...
+KEYWORDS=		x11_wm
 VARIANTS=		standard
-SDESC[standard]=	...
+SDESC[standard]=	Window manager inspired by xmonad and dwm
 HOMEPAGE=		none
-CONTACT=		Jay_Leno[jay@aarp.org]
+CONTACT=		Todd_Martin[warfox@sdf.org]
 
 DOWNLOAD_GROUPS=	main
-SITES[main]=		http://www.example.com/
-DISTFILE[1]=		x-${PORTVERSION}.tar.gz:main
+SITES[main]=		GITHUB/conformal:spectrwm:SPECTRWM_${PORTVERSION}
+DISTFILE[1]=		generated:main
 
 SPKGS[standard]=	single
 
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
-FPC_EQUIVALENT=		...
+FPC_EQUIVALENT=		x11_wm/spectrwm
+
+USES=			pkgconfig
+XORG_COMPONENTS=	x11 xft xinerama
