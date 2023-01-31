@@ -1,1 +1,0 @@
-Man pages for blogc are contained in this package.
