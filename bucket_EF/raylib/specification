@@ -1,0 +1,27 @@
+DEF[PORTVERSION]=	4.2.0
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		raylib
+VERSION=		${PORTVERSION}
+KEYWORDS=		devel
+VARIANTS=		standard
+SDESC[standard]=	Simple library for game programming
+HOMEPAGE=		http://www.raylib.com
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		GITHUB/raysan5:raylib:${PORTVERSION}
+DISTFILE[1]=		generated:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		devel/raylib
+
+USES=			cmake
+XORG_COMPONENTS=	x11 xrandr xinerama xcursor xi
+
+BUILDRUN_DEPENDS=	libglvnd:single:standard
+			libGLU:single:standard
