@@ -1,0 +1,13 @@
+--- Makefile	2020-03-15 11:59:54.000000000 +0000
++++ Makefile.new	2023-02-01 21:47:52.769455056 +0000
+@@ -40,8 +40,8 @@
+ $(error "Platform '$(SYSTEM)' not supported")
+ endif
+ 
+-GLEW_PREFIX ?= /usr
+-GLEW_DEST ?= /usr
++GLEW_PREFIX ?= __PREFIX__
++GLEW_DEST ?= __PREFIX__
+ BINDIR    ?= $(GLEW_DEST)/bin
+ LIBDIR    ?= $(GLEW_DEST)/lib
+ INCDIR    ?= $(GLEW_DEST)/include/GL
