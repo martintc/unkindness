@@ -1,0 +1,23 @@
+DEF[PORTVERSION]=	3.5.1
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		godot
+VERSION=		${PORTVERSION}
+KEYWORDS=		games devel
+VARIANTS=		standard
+SDESC[standard]=	Opened source game engine
+HOMEPAGE=		https://godotengine.org
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		GITHUB/godotengine:godot:${PORTVERSION}-stable
+DISTFILE[1]=		generated:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		devel/godot
+
+USES=			c++:primary scons
