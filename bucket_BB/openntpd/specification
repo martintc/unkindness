@@ -13,17 +13,18 @@ DOWNLOAD_GROUPS=	main
 SITES[main]=		http://ftp.openbsd.org/pub/OpenBSD/OpenNTPD/
 DISTFILE[1]=		openntpd-${PORTVERSION}.tar.gz:main
 
-SPKGS[standard]=	single
+SPKGS[standard]=	complete primary man
 
 OPTIONS_AVAILABLE=	none
 OPTIONS_STANDARD=	none
 
-LICENSE=		ISCL:single
+LICENSE=		ISCL:primary
 LICENSE_FILE=		ISCL:{{WRKSRC}}/COPYING
 LICENSE_SCHEME=		solo
 
 FPC_EQUIVALENT=		net/openntp
 
-USES=			gmake
-
 MUST_CONFIGURE=		gnu
+
+post-stage:
+	${RM} -r ${STAGEDIR}/var
