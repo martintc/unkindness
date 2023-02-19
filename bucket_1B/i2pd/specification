@@ -1,0 +1,23 @@
+DEF[PORTVERSION]=	2.46.0
+# ----------------------------------------------------------------------------
+
+NAMEBASE=		i2pd
+VERSION=		${PORTVERSION}
+KEYWORDS=		security
+VARIANTS=		standard
+SDESC[standard]=	Something to fill in later
+HOMEPAGE=		none
+CONTACT=		Todd_Martin[warfox@sdf.org]
+
+DOWNLOAD_GROUPS=	main
+SITES[main]=		GITHUB/PurpleI2P:i2pd:${PORTVERSION}
+DISTFILE[1]=		generated:main
+
+SPKGS[standard]=	single
+
+OPTIONS_AVAILABLE=	none
+OPTIONS_STANDARD=	none
+
+FPC_EQUIVALENT=		security/i2pd
+
+USES=			gmake zlib ssl:openssl11 clang
