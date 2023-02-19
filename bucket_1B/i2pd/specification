@@ -20,4 +20,6 @@ OPTIONS_STANDARD=	none
 
 FPC_EQUIVALENT=		security/i2pd
 
+BUILD_DEPENDS=		boost-libraries:single:standard
+
 USES=			gmake zlib ssl:openssl11 clang
